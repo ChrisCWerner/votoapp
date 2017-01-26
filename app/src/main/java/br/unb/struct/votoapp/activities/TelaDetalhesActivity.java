@@ -15,7 +15,6 @@ import br.unb.struct.votoapp.R;
 public class TelaDetalhesActivity extends AppCompatActivity {
     private Button btVoltar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
