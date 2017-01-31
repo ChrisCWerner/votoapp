@@ -17,9 +17,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.TelaDetalhesActivity"></activity>
+        <activity android:name=".activities.TelaDetalhesActivity"
+            android:parentActivityName=".activities.TelaVotacaoActivity">
+        </activity>
 
-        <activity android:name=".activities.TelaVotacaoActivity"></activity>
+        <activity android:name=".activities.TelaVotacaoActivity"
+            android:parentActivityName=".activities.MainActivity"></activity>
+
+        <activity android:name=".activities.TelaResultadoActivity"
+            android:parentActivityName=".activities.TelaVotacaoActivity"></activity>
 
     </application>
 

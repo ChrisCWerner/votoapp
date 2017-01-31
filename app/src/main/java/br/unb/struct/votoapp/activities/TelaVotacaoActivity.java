@@ -19,6 +19,7 @@ public class TelaVotacaoActivity extends AppCompatActivity {
     private Button btVotar1;
     private Button btVotar2;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class TelaVotacaoActivity extends AppCompatActivity {
         btDetalhes1 = (Button) findViewById(R.id.bt_detalhes1);
         btDetalhes2 = (Button) findViewById(R.id.bt_detalhes2);
         btVotar1 = (Button) findViewById(R.id.bt_votar1);
-        btVotar1 = (Button) findViewById(R.id.bt_votar2);
+        btVotar2 = (Button) findViewById(R.id.bt_votar2);
 
 
         btDetalhes1.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +43,24 @@ public class TelaVotacaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),TelaDetalhesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btVotar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TelaResultadoActivity.class);
+                // TODO Adicionar mecanismo para voto
+                startActivity(intent);
+            }
+        });
+
+        btVotar2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TelaResultadoActivity.class);
+                // TODO Adicionar mecanismo para voto
                 startActivity(intent);
             }
         });

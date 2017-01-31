@@ -20,14 +20,6 @@ public class TelaDetalhesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teladetalhes);
 
-        btVoltar = (Button) findViewById(R.id.bt_voltar);
 
-        btVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),TelaVotacaoActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
