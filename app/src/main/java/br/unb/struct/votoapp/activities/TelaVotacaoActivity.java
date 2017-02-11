@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import br.unb.struct.votoapp.R;
+import br.unb.struct.votoapp.model.Refeicao;
+import br.unb.struct.votoapp.model.Singleton;
+import br.unb.struct.votoapp.model.VotoRefeicao;
 
 /**
  * Created by rodrigo on 25/01/17.
@@ -30,6 +33,10 @@ public class TelaVotacaoActivity extends AppCompatActivity {
         btVotar1 = (Button) findViewById(R.id.bt_votar1);
         btVotar2 = (Button) findViewById(R.id.bt_votar2);
 
+        final Singleton singleton = Singleton.getINSTANCE();
+        singleton.getLista().add(new VotoRefeicao(new Refeicao("Principal1","Vegetariano1","Salada1","Guarnição1")));
+        singleton.getLista().add(new VotoRefeicao(new Refeicao("Principal2","Vegetariano2","Salada2","Guarnição2")));
+
 
         btDetalhes1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +58,7 @@ public class TelaVotacaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TelaResultadoActivity.class);
-                // TODO Adicionar mecanismo para voto
+                singleton.getLista().get(0).incrementaVoto();
                 startActivity(intent);
             }
         });
@@ -60,7 +67,7 @@ public class TelaVotacaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TelaResultadoActivity.class);
-                // TODO Adicionar mecanismo para voto
+                singleton.getLista().get(1).incrementaVoto();
                 startActivity(intent);
             }
         });

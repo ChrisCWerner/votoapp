@@ -17,6 +17,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 import br.unb.struct.votoapp.R;
+import br.unb.struct.votoapp.model.Singleton;
 
 /**
  * Created by User on 31/01/2017.
@@ -64,8 +65,12 @@ public class TelaResultadoActivity extends AppCompatActivity {
     public void addData(){
 
         ArrayList<PieEntry> entries = new ArrayList<>();
+        Singleton singleton = Singleton.getINSTANCE();
 
-        // TODO INTEGRAÇÃO - adicionar dados à variavel entries
+        entries.add(new PieEntry(singleton.getLista().get(0).getVotos(),
+                singleton.getLista().get(0).getRefeicao().getPratoPrincipal()));
+        entries.add(new PieEntry(singleton.getLista().get(1).getVotos(),
+                singleton.getLista().get(1).getRefeicao().getPratoPrincipal()));
 
         PieDataSet dataSet = new PieDataSet(entries,"Resultado");
         dataSet.setSliceSpace(5f);
